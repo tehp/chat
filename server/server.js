@@ -36,7 +36,9 @@ db_test.once('open', function() {
   console.log('Mongo Connection: ' + chalk.green('GOOD'));
 });
 
+// TODO: sort alphabetically
 app.use(require('./routes/user'));
+app.use(require('./routes/team'));
 
 app.get('*', (req, res) => {
   res.send('chatserver');

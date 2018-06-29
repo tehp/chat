@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
+
 var teamSchema = new mongoose.Schema({
   name: {
     type: String,

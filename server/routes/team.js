@@ -17,10 +17,11 @@ router.post('/team', (req, res) => {
   var team = new Team({
     name: req.body.name,
     description: req.body.description,
-    administrator: req.body.administrator
+    administrator: mongoose.Types.ObjectId(req.body.administrator),
+    members: [{}]
   });
 
-  var session = req.session;
+  console.log(team);
 
   team.save(err => {
     if (err) {
