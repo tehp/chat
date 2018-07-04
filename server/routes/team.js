@@ -17,14 +17,15 @@ router.post('/team', (req, res) => {
   var team = new Team({
     name: req.body.name,
     description: req.body.description,
-    administrator: mongoose.Types.ObjectId(req.body.administrator),
-    members: [{}]
+    administrator: req.body.administrator,
+    members: []
   });
 
-  console.log(team);
 
   team.save(err => {
+    console.log('in save');
     if (err) {
+      console.log(err);
       return res.json(new Response({
         success: false,
         message: 'Team creation failed.'

@@ -15,7 +15,7 @@ var userSchema = new mongoose.Schema({
     required: true
   },
   created: Date,
-  logins: Number,
+  logins: Number
 });
 
 userSchema.pre('save', function(next) {
