@@ -3,7 +3,8 @@ var bcrypt = require('bcrypt');
 
 var messageSchema = new mongoose.Schema({
   sender: {
-    type: ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   },
   message: {
@@ -17,6 +18,7 @@ messageSchema.pre('save', function(next) {
   if (!this.created) {
     this.created = new Date();
   }
+  next();
 });
 
 module.exports = mongoose.model('Message', messageSchema);

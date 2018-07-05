@@ -16,6 +16,7 @@ responseSchema.pre('save', function(next) {
   if (!this.created) {
     this.created = new Date();
   }
+  next();
 });
 
 module.exports = mongoose.model('Response', responseSchema);

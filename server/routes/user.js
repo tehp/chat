@@ -11,6 +11,12 @@ var Response = require('../models/Response');
 
 var router = express.Router();
 
+router.get('/user', (req, res) => {
+  User.find({}, function(err, users) {
+    res.send(users);
+  });
+});
+
 router.post('/user', (req, res) => {
 
   console.log(req.body.username);

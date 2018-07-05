@@ -39,6 +39,7 @@ db_test.once('open', function() {
 // TODO: sort alphabetically
 app.use(require('./routes/user'));
 app.use(require('./routes/team'));
+app.use(require('./routes/message'));
 
 app.get('*', (req, res) => {
   res.send('chatserver');

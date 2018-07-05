@@ -12,6 +12,12 @@ var Response = require('../models/Response');
 
 var router = express.Router();
 
+router.get('/team', (req, res) => {
+  Team.find({}, function(err, teams) {
+    res.send(teams);
+  });
+});
+
 router.post('/team', (req, res) => {
 
   var team = new Team({
