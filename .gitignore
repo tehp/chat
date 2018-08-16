@@ -1,3 +1,6 @@
+# TS dist
+/server/dist
+
 # Logs
 logs
 *.log
