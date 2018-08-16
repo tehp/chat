@@ -1,4 +1,4 @@
-import { prop, Typegoose, ModelType, InstanceType } from 'typegoose';
+import { prop, Typegoose, ModelType, InstanceType, instanceMethod } from 'typegoose';
 import * as mongoose from 'mongoose';
 import { User } from './User';
 
@@ -7,10 +7,10 @@ export class Team extends Typegoose {
   name?: string;
 
   @prop()
-  administrator?: User;
+  admin?: User;
 
   @prop()
   members?: User[];
 }
 
-export const UserModel = new Team().getModelForClass(Team);
+export const TeamModel = new Team().getModelForClass(Team);

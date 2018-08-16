@@ -14,4 +14,4 @@ export class Message extends Typegoose {
   team?: Team;
 }
 
-export const UserModel = new Message().getModelForClass(Message);
+export const MessageModel = new Message().getModelForClass(Message);
