@@ -3,10 +3,10 @@ import * as mongoose from 'mongoose';
 
 export class User extends Typegoose {
   @prop({ unique: true })
-  username?: string;
+  name?: string;
 
   @prop()
-  email?: string;
+  password?: string;
 }
 
 export const UserModel = new User().getModelForClass(User);
