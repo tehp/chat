@@ -34,7 +34,7 @@ mongoose.connect(db_url);
 var db_test = mongoose.connection;
 db_test.on('error', console.error.bind(console, 'connection error:'));
 db_test.once('open', () => {
-  console.log('Mongo Connection: good');
+  console.log('connected to db');
 });
 
 app.use('/user', userRouter);
