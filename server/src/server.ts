@@ -12,7 +12,7 @@ import * as userRouter from './routes/user';
 import * as teamRouter from './routes/team';
 import * as messageRouter from './routes/message';
 
-var db_url = 'mongodb://localhost/chat';
+var db_url = 'mongodb://localhost:27017/chat';
 var port = 8080;
 
 app.use(session({
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(morgan('dev'));
 
 // database connection
-mongoose.connect(db_url);
+mongoose.connect(db_url, { useNewUrlParser: true });
 
 var db_test = mongoose.connection;
 db_test.on('error', console.error.bind(console, 'connection error:'));
